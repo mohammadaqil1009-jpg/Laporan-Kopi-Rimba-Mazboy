@@ -1,0 +1,183 @@
+#menu-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Satu kolom agar rapi di HP, gunakan repeat(2, 1fr) jika ingin 2 kolom */
+    gap: 8px;
+}
+
+.menu-item {
+    background: #FFF8E1;
+    border: 2px solid #5D4037;
+    border-radius: 10px;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    min-height: 50px;
+    transition: all 0.2s;
+}
+
+.menu-info {
+    text-align: left;
+    flex: 1;
+}
+
+.menu-info div {
+    font-size: 14px;
+    font-weight: bold;
+    color: #5D4037;
+}
+
+.menu-info small {
+    color: #8D6E63;
+    font-size: 12px;
+}
+
+.menu-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 1px solid rgba(93, 64, 55, 0.2);
+    padding-left: 12px;
+}
+
+.btn-mini {
+    background: #5D4037;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.qty-text {
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 25px;
+    text-align: center;
+}
+
+.qty-badge {
+    background: #f44336;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 10px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: 10;
+}
+
+.cart-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+:root {
+    --p-brown: #5D4037;   
+    --p-brown-light: #8D6E63;
+    --p-yellow: #FFC107;  
+    --p-cream: #FFF8E1;   
+    --white: #ffffff;
+    --border: #D7CCC8;
+}
+
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background: #fdfdfd; margin: 0; padding-bottom: 80px; color: #3E2723;
+}
+
+.header { 
+    background: linear-gradient(to right, #3E2723, #5D4037);
+    color: white; text-align: center; padding: 25px 15px;
+}
+
+.tab-nav { display: flex; background: white; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #eee; }
+.tab-btn { flex: 1; padding: 15px; border: none; background: none; font-weight: bold; color: #8D6E63; cursor: pointer; }
+.tab-btn.active { color: #5D4037; border-bottom: 4px solid var(--p-yellow); }
+
+.profile-card {
+    background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
+    border-radius: 20px; padding: 20px; color: white;
+    margin-bottom: -30px; position: relative; z-index: 1;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.profile-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+.avatar-circle {
+    width: 65px; height: 65px; background: white; border-radius: 50%;
+    overflow: hidden; border: 2px solid var(--p-yellow);
+}
+.avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
+.profile-info h2 { margin: 0; font-size: 1.2rem; color: var(--p-yellow); }
+
+.profile-meta {
+    display: flex; background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px; padding: 10px; justify-content: space-between;
+}
+.meta-item { font-size: 0.7rem; }
+
+.container { padding: 45px 15px 15px; max-width: 600px; margin: auto; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.card { 
+    background: white; padding: 20px; border-radius: 15px; 
+    border: 1px solid var(--border); margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.card-title { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--p-red); font-weight: 800; border-bottom: 1px solid #eee; margin-bottom: 15px; padding-bottom: 8px; }
+
+.input-group { display: flex; flex-direction: column; margin-bottom: 15px; }
+.input-group label { font-size: 0.75rem; margin-bottom: 5px; font-weight: bold; color: var(--p-red); }
+input, select { padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; }
+
+.btn-checkin, .btn-gen { background: var(--p-brown); color: white; width: 100%; padding: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+.btn-upload { background: #f9f9f9; border: 2px dashed var(--p-brown); color: var(--p-brown); padding: 10px; border-radius: 10px; width: 100%; cursor: pointer; }
+.btn-add { background: var(--p-black-light); color: white; border: none; padding: 10px; border-radius: 8px; width: 100%; margin-bottom: 10px; cursor: pointer; }
+
+.porsi-row { background: #fcfcfc; padding: 12px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #eee; }
+.porsi-row.locked { background: #e8f5e9; border: 1px solid #4caf50; opacity: 0.9; }
+
+.total-bold { font-size: 1.2rem; font-weight: bold; color: #2E7D32; text-align: center; background: #e8f5e9; width: 100%; border: none; }
+
+/* KALKULATOR */
+.float-calc { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+.btn-float-toggle { width: 60px; height: 60px; background: var(--p-brown); color: white; border-radius: 50%; border: none; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; }
+.calc-hp { position: absolute; bottom: 75px; right: 0; width: 280px; background: #000; border-radius: 25px; padding: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.calc-screen { text-align: right; padding: 20px 10px; color: white; height: 80px; display: flex; flex-direction: column; justify-content: flex-end; }
+#calc-display { font-size: 2.5rem; font-weight: 300; }
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Mengunci 4 kolom */
+    gap: 12px;
+    padding: 10px;
+}
+
+.calc-buttons button {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: none;
+    background: #333;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Khusus tombol 0 agar lebarnya pas mengikuti 2 kolom grid */
+.calc-buttons button[style*="grid-column: span 1"] {
+    width: 122px; /* 55px + 55px + 12px gap */
+    border-radius: 30px;
+  }
